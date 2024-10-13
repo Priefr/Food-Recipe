@@ -10,11 +10,239 @@
     --tenne-tawny-dark: #b54507;
 }
 body{
+    margin: 0;
     font-weight: 300;
     font-size: 1.05rem;
     line-height: 1.6;
     font-family: 'Poppins', sans-serif;
 }
+/* Navbar Styles */
+.navbar {
+    background-color: hsl(0, 86%, 92%); /* Dark background */
+    justify-content: space-between;
+    padding: 10px 20px; /* Spacing around the navbar */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-title {
+    color: hsl(29, 86%, 50%); /* White text color */
+    font-size: 24px; /* Font size */
+    margin: 0;
+}
+/* .navbar-login{
+    position: absolute;
+    right: 0px;
+
+} */
+.login-btn {
+position: fixed;    right: 0px;
+    align-items: end;
+    text-decoration: none;
+    color: #fff;
+    background: var(--tenne-tawny);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+.login-btn:hover {
+    background: var(--tenne-tawny-dark);
+    transform: scale(1.05); 
+}
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Modal width */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Login Form Styles */
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content label {
+    margin-top: 10px;
+  }
+  
+  .modal-content input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-submit-btn {
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .login-success-message {
+    font-weight: bold;
+    width: 100%;
+    background-color: hsl(122, 100%, 88%); 
+    text-align: center;
+    color: #065818d7;
+    padding: 15px;
+    position: fixed; 
+    top: 2%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: var(--tenne-tawny);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+.sidenav a, .dropdown-btn {
+  padding: 8px 8px 8px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.dropdown-container a {
+  font-size: 18px;
+  color: #818181;
+}
+
+.dropdown-container a:hover {
+  color: #f1f1f1;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: hsl(0, 27%, 96%);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: hsl(32, 94%, 49%);
+    background: #fff;
+    
+  }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 12px; /* Adjust vertical alignment */
+    right: 20px; /* Adjust horizontal alignment */
+    font-size: 55px; /* Font size for the "x" */
+    margin: 0;
+    width: 10px; /* Set circular width */
+    height: 50px; /* Set circular height */
+    line-height: 30px; /* Ensure "x" is centered vertically */
+    text-align: left; /* Center the "x" horizontally */
+    background-color: transparent; /* Transparent background */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #fff;
+}
+
+/* On hover, change background color and text color */
+.sidenav .closebtn:hover {
+     background: var(--tenne-tawny);
+    color: #030201; /* White text on hover */
+    cursor: pointer;
+}
+
+
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
 
 /*  */
 .btn{
@@ -388,5 +616,15 @@ body{
     .meal-item {
         margin: 0;
         padding: 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .navbar-title {
+        margin-bottom: 10px; /* Add space below the title */
     }
 }
